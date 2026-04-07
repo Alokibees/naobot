@@ -9,7 +9,7 @@ export async function GET() {
   // Enrich topFaqs with actual FAQ text
   const enriched = analytics.topFaqs.map(f => {
     const faq = faqs.find(q => q.id === f.faqId);
-    return { ...f, answer: faq?.answer?.slice(0, 80) + "…" ?? "—", keywords: faq?.keywords ?? [] };
+    return { ...f, answer: (faq?.answer ?? "").slice(0, 80) + "…", keywords: faq?.keywords ?? [] };
   });
 
   return NextResponse.json({ ...analytics, topFaqs: enriched });
