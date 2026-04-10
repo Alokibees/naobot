@@ -9,6 +9,7 @@
     "migrate": "npx tsx scripts/migrate.ts"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.15.9",
     "@types/pg": "^8.20.0",
     "jose": "^6.2.2",
     "next": "15.5.14",
